@@ -1,0 +1,22 @@
+{
+  "name": "waytobooking",
+  "version": "1.0.0",
+  "description": "event managment app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rajeshmy/waytobooking.git"
+  },
+  "keywords": [
+    "events"
+  ],
+  "author": "prakasha&raju",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Rajeshmy/waytobooking/issues"
+  },
+  "homepage": "https://github.com/Rajeshmy/waytobooking#readme"
+}
