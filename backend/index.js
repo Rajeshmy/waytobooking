@@ -1,13 +1,17 @@
+//built-in libraries
 require('dotenv').config()
 const express = require('express');
-const asyncHandler = require('express-async-handler');
 const cookieparser = require('cookie-parser');
+const connectDb = require('./db/db')
 const helmet = require('helmet');
 const bodyparser = require('body-parser');
-const cors= require('cors')
+const cors= require('cors');
 const app = express();
-const PORT=4000;
 
+
+//custom imports;
+const userrouter = require('./routes/user/userrouter')
+const port = process.env.PORT||8000;
 
 
 app.use(cors());
@@ -16,9 +20,12 @@ app.use(helmet());
 app.use(cookieparser());
 
 
+app.use("/users",userrouter);
+//app.use("/users",userrouter);
 
-app.get("/",asyncHandler(async(req,res)=>{
-  res.end("Hellouser this is, way to booking")
-}));
 
-app.listen(PORT,()=>{console.log("listening at port",PORT)})
+app.listen(port,()=>{
+  console.log("listening at port",port);
+  connectDb();
+  
+});
